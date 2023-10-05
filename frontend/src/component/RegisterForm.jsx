@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 const RegisterForm = () => {
-    const api = 'http://localhost:8088/api/v1/user';
+    const api = 'http://localhost:8088/api/v1/user/register';
     const navigate = useNavigate();
 
     const [ userName, setUserName ] = useState('');
@@ -96,7 +96,7 @@ const RegisterForm = () => {
                 </Form.Group>
 
                 <Button variant='primary' className='mx-3' type='submit'>
-                    Submit
+                    Register
                 </Button>
             </Form>
         </div>
