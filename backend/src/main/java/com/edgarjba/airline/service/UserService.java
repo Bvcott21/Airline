@@ -53,7 +53,7 @@ public class UserService {
 			Boolean isPwdRight = passwordEncoder.matches(loginPassword, encodedUserFoundPassword);
 			
 			if(isPwdRight) {
-				Optional<User> optUser = userRepo.findOneByUserNameAndPassword(loginDTO.getUserName(), loginDTO.getPassword());
+				Optional<User> optUser = userRepo.findOneByUserNameAndPassword(loginDTO.getUserName(), encodedUserFoundPassword);
 				
 				if(optUser.isPresent()) {
 					return new LoginResponse("Login Success", true);
